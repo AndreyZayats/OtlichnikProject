@@ -36,6 +36,6 @@ public class UserController {
         if("admin".equals(user.getName()) && "admin".equals(user.getPassword())) {
             return "valid";
         }
-        return "invalid login or password";
+        return "invalid";
     }
 }
