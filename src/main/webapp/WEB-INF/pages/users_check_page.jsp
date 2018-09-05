@@ -12,10 +12,13 @@
     <title>Title</title>
 </head>
 <body>
-    <spring:form modelAttribute="userFromServer" method="post" action="/index/userauth/check">
-        <spring:input path="name"/>
-        <spring:input path="password"/>
-        <spring:button>check user</spring:button>
+    <spring:form modelAttribute="userFromServer" method="post" action="/index/registration">
+        <spring:input path="userName"/>
+        <spring:input path="userPassword"/>
+        <spring:input path="userLogin"/>
+        <spring:input path="userEMail"/>
+        <spring:input path="userTelephone"/>
+        <spring:button>Зарегистрироваться</spring:button>
     </spring:form>
 </body>
 </html>

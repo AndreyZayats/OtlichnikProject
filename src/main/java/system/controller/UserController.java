@@ -1,5 +1,4 @@
 package system.controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,8 +22,8 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @RequestMapping(value = "/validate", method = RequestMethod.GET)
-    public ModelAndView validateUser() {
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public ModelAndView registerUser() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("userFromServer", new User());
         modelAndView.setViewName("users_check_page");
@@ -33,7 +32,7 @@ public class UserController {
 
     @RequestMapping(value = "/check", method = RequestMethod.POST)
     public @ResponseBody String checkUser(@ModelAttribute("userFromServer") User user) {
-        if("admin".equals(user.getName()) && "admin".equals(user.getPassword())) {
+        if("admin".equals(user.getUserName()) && "admin".equals(user.getUserPassword())) {
             return "valid";
         }
         return "invalid";

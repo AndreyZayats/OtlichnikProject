@@ -7,9 +7,11 @@ import java.util.Arrays;
 import java.util.List;
 
 @Repository
-public class UserDao {
-    public List<User> users = Arrays.asList(new User("admin", "admin"),
-            new User("user1", "user1"));
+public class UserDao implements BaseDao {
+
+
+    public List<User> users = Arrays.asList(new User("admin", "admin", "admin", "admin@a.ru", "322"),
+            new User("user1", "user1","admin", "admin@a.ru", "322"));
 
     public List<User> getAllUsers() {
         return users;
