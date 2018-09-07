@@ -121,6 +121,14 @@ public class Order {
         this.orderDate = orderDate;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Order{" +

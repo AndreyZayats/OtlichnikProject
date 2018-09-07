@@ -5,8 +5,6 @@ package system.dao;
  * БД UserDate (таблицы orders и users).
  */
 
-import system.model.Order;
-
 import java.util.List;
 
 public interface BaseCrudDao<T> {
@@ -14,5 +12,4 @@ public interface BaseCrudDao<T> {
     void update(T object);
     void delete(T object);
     List<T> findAll();
-    List<T> findById(int id);
 }

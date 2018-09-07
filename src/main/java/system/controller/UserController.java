@@ -17,10 +17,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    /* @RequestMapping(value = "/list", method = RequestMethod.GET)
     public @ResponseBody List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+    */
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public ModelAndView registerUser() {
