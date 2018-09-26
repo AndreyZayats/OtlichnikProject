@@ -1,36 +1,29 @@
 package system.impl;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+/*
+ * Реализация, согласно концепции DAO, методов работы с таблицами БД путем наследования этих методов от
+ * класса инструментов работы с данными BaseImpl и имплементирования интерфейса OrderDao с данными методами.
+ */
+
+import org.springframework.stereotype.Repository;
 import system.dao.OrderDao;
 import system.model.Order;
 import java.util.List;
 
 import static system.util.HibernateSessionFactoryUtil.openSession;
 
-public class OrderDaoImpl implements OrderDao {
+@Repository
+public class OrderDaoImpl extends BaseImpl implements OrderDao {
     public void save(Order order) {
-        Session session = openSession();
-        Transaction transaction1 = session.beginTransaction();
-        session.save(order);
-        transaction1.commit();
-        session.close();
+        saveObject(order);
     }
 
     public void update(Order order) {
-        Session session = openSession();
-        Transaction transaction1 = session.beginTransaction();
-        session.update(order);
-        transaction1.commit();
-        session.close();
+        updateObject(order);
     }
 
     public void delete(Order order) {
-        Session session = openSession();
-        Transaction transaction1 = session.beginTransaction();
-        session.delete(order);
-        transaction1.commit();
-        session.close();
+        deleteObject(order);
     }
 
 
@@ -42,5 +35,4 @@ public class OrderDaoImpl implements OrderDao {
     public List<Order> findOrdersById(int id) {
         return (List<Order>) openSession().get(Order.class, id);
     }
-
 }

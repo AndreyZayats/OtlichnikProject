@@ -9,10 +9,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Регистрация</title>
 </head>
 <body>
-    <spring:form modelAttribute="userFromServer" method="post" action="/index/registration">
+    <spring:form modelAttribute="userFromServer" method="post" action="/reg">
         <spring:input path="userName"/>
         <spring:input path="userPassword"/>
         <spring:input path="userLogin"/>

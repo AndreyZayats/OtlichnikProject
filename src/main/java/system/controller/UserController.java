@@ -9,33 +9,13 @@ import org.springframework.web.servlet.ModelAndView;
 import system.model.User;
 import system.service.UserService;
 
-import java.util.List;
-
 @Controller
-@RequestMapping("/userauth")
 public class UserController {
-    @Autowired
-    private UserService userService;
-
-    /* @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public @ResponseBody List<User> getAllUsers() {
-        return userService.getAllUsers();
-    }
-    */
-
-    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    @RequestMapping(value = "/reg", method = RequestMethod.POST)
     public ModelAndView registerUser() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("userFromServer", new User());
-        modelAndView.setViewName("users_check_page");
+        modelAndView.setViewName("register_user");
         return modelAndView;
-    }
-
-    @RequestMapping(value = "/check", method = RequestMethod.POST)
-    public @ResponseBody String checkUser(@ModelAttribute("userFromServer") User user) {
-        if("admin".equals(user.getUserName()) && "admin".equals(user.getUserPassword())) {
-            return "valid";
-        }
-        return "invalid";
     }
 }
