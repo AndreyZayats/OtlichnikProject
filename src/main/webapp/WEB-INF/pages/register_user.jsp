@@ -12,7 +12,7 @@
     <title>Регистрация</title>
 </head>
 <body>
-    <spring:form modelAttribute="userFromServer" method="post" action="/reg">
+    <spring:form modelAttribute="userFromServer" method="post" action="registration">
         <spring:input path="userName"/>
         <spring:input path="userPassword"/>
         <spring:input path="userLogin"/>

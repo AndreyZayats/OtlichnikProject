@@ -5,11 +5,13 @@ package system.service;
  * реализованные в классе UserDaoImpl.
  */
 
+import org.springframework.stereotype.Component;
 import system.impl.UserDaoImpl;
 import system.model.User;
 
 import java.util.List;
 
+@Component
 public class UserService {
     private UserDaoImpl userDaoImpl = new UserDaoImpl();
 
