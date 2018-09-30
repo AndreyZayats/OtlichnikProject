@@ -23,7 +23,7 @@ public class UserService {
             userDaoImpl.save(user);
             System.out.println("Пользователь успешно сохранен в БД");}
         catch(Exception e) {
-            e.printStackTrace();
+            System.out.println("Логин пользователя не уникален");
         }
     }
 

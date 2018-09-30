@@ -22,7 +22,7 @@
                 <configuration>
                     <scanIntervalSeconds>2</scanIntervalSeconds>
                     <httpConnector>
-                        <port>9998</port>
+                        <port>9997</port>
                     </httpConnector>
                     <webApp>
                         <contextPath>/index</contextPath>

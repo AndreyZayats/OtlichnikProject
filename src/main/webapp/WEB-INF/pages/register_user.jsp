@@ -13,11 +13,11 @@
 </head>
 <body>
     <spring:form modelAttribute="userFromServer" method="post" action="registration">
-        <spring:input path="userName"/>
-        <spring:input path="userPassword"/>
-        <spring:input path="userLogin"/>
-        <spring:input path="userEMail"/>
-        <spring:input path="userTelephone"/>
+        Логин пользователя: <spring:input path="userLogin"/><br>
+        Пароль пользователя: <spring:input path="userPassword"/><br>
+        Имя пользователя: <spring:input path="userName"/><br>
+        E-mail пользователя: <spring:input path="userEMail"/><br>
+        Телефон пользователя: <spring:input path="userTelephone"/><br>
         <spring:button>Зарегистрироваться</spring:button>
     </spring:form>
 </body>

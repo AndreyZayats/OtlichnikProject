@@ -14,14 +14,14 @@ public class UserController {
 
     @GetMapping(value = "/registration")
     public ModelAndView registrationForm(ModelAndView modelAndView) {
-        modelAndView.addObject("userFromServer", new User());
-        modelAndView.setViewName("register_user");
-        return modelAndView;
+            modelAndView.addObject("userFromServer", new User());
+            modelAndView.setViewName("register_user");
+            return modelAndView;
     }
 
     @PostMapping(value = "/registration")
-    public String registerUser(@ModelAttribute("userFromServer") User user, BindingResult result) {
+    public String registerUser(@ModelAttribute("userFromServer") User user) {
         userService.saveUser(user);
-        return "register_user";
+        return "registration_successful";
     }
 }
